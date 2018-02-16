@@ -1,16 +1,17 @@
 def squared_sum(a, b)
   # Q1 CODE HERE
-  return a ** 2 + b ** 2
+  return (a + b) ** 2
 end
 
 def sort_array_plus_one(a)
   # Q2 CODE HERE
-
+  a.sort.map {|i| i + 1}
 end
+
 
 def combine_name(first_name, last_name)
   # Q3 CODE HERE
-
+  return first_name + " " + last_name
 end
 
 def blockin_time(a)
@@ -20,6 +21,7 @@ def blockin_time(a)
 end
 
 def scrabble(word)
+  score = 0
   values = {
     a: 1,
     b: 3,
@@ -49,4 +51,9 @@ def scrabble(word)
     z: 10,
   }
   # Q5 CODE HERE
+  word = word.split("")
+  word.each do |i|
+    score += values[i.to_sym]
+  end
+  return score
 end
